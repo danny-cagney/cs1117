@@ -1,0 +1,37 @@
+# myList = [34, 45, 56, 67]
+
+# numToBeFound = 45
+# found = False
+# for numberIndex in range(len(myList)):
+
+
+def binarySearch(ls,data):
+    first = 0
+    last = len(ls) - 1
+    found = False
+
+    #while not found
+    while found == False:
+        #2. Find 
+        mid = (first + last)//2
+        print(ls[mid])
+
+        if ls[mid] == data:
+            print ("Yay I've found the number")
+            found = True
+        
+        else:
+            if data not in ls:
+                print("Number was not found in the list")
+                found = False
+                return False
+            if ls[mid] > data:
+                last = mid - 1
+
+            else:
+                first = mid + 1
+
+    return found
+
+print(binarySearch([3,5,6,8,11,12,14,15,17,18],8))
+print(binarySearch([3,5,6,8,11,12,14,15,17,18],16))
