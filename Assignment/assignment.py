@@ -85,8 +85,6 @@
 # programming constructs. 
 # This will be weighted heavily.  
 # See the skeleton code relating to this question. 
-# The pivot point of a list is a number where all the 
-# numbers to the left of it and all the numbers to the right of it sum to the same value. 
 # Write the function identifyPivot that takes a list as input and output the number that is the pivot.  
 # If there is no pivot, -1 should be returned. 
 # If there are multiple pivot numbers in a single list, return the first one that occurs. 
@@ -116,15 +114,22 @@
 # is equal to sum of left side
  
 # Function to compute partition
-def identifyPivot(L) :
- 
-    rightSideSum = 0
-    leftSideSum = 0
+def identifyPivot(L):
+    """The pivot point of a list is a number where all the numbers to the left of it 
+    and all the numbers to the right of it sum to the same value.
+    - initialise rightside sum
+    - initialise leftside sum
+    - if the leftside sum == rightside sum, then return the number form the list at the index
+    - if there is no pivot index to return then the function returns -1
+    """
 
-    listLength = len(L)
+    rightSideSum = 0 #initialise a variable that will be used to calculate sum on right side of the pivot point.
+    leftSideSum = 0 #initialise a variable that will be used to calculate sum on left side of the pivot point.
+
+    listLength = len(L) #initialise a variable that will require a function will need the 
  
     # Computing right_sum
-    for i in range(1, listLength) :
+    for i in range(1, listLength): #establish a loop that will 
         rightSideSum += L[i]
  
     i = 0
@@ -133,19 +138,20 @@ def identifyPivot(L) :
  
     # Checking the point of partition
     # i.e. left_Sum == right_sum
-    while j < listLength :
+    while j < listLength:
         
         rightSideSum -= L[j]
         
         leftSideSum += L[i]
  
-        if leftSideSum == rightSideSum :
+        if leftSideSum == rightSideSum:
             return L[i + 1]
  
         j += 1
         i += 1
  
-    return -1
+    else:
+        return -1
  
      
 
