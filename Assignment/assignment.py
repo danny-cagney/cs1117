@@ -145,9 +145,9 @@ def identifyPivot(L):
     # i.e. left_Sum == right_sum
     while j < listLength:
         
-        rightSideSum -= L[j]
+        rightSideSum -= L[j] #decrement - 
         
-        leftSideSum += L[i]
+        leftSideSum += L[i] #increment - 
  
         if leftSideSum == rightSideSum:
             return L[i + 1]
