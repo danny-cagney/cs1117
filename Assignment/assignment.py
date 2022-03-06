@@ -121,6 +121,11 @@ def identifyPivot(L):
     - initialise leftside sum
     - if the leftside sum == rightside sum, then return the number form the list at the index
     - if there is no pivot index to return then the function returns -1
+
+    We calculate the sum of the whole array except the first element in right_sum, 
+    considering it to be the partitioning element. 
+    Now, we traverse the array from left to right, subtracting an element from right_sum and adding an element to left_sum. 
+    At the point where right_sum equals left_sum, we get the partition.
     """
 
     rightSideSum = 0 #initialise a variable that will be used to calculate sum on right side of the pivot point.
@@ -129,8 +134,8 @@ def identifyPivot(L):
     listLength = len(L) #initialise a variable that will require a function will need the 
  
     # Computing right_sum
-    for i in range(1, listLength): #establish a loop that will 
-        rightSideSum += L[i]
+    for index in range(1, listLength): #establish a loop that will 
+        rightSideSum += L[index]
  
     i = 0
 
