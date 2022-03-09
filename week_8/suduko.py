@@ -22,7 +22,15 @@ def printBoard (SBoard):
             print (horizontalEdge)
         for colIndex in range(len(SBoard[0])):
             if colIndex % 3 == 0:
-                print (verticalEdge)
+                print (verticalEdge, end="")
+            
+            if SBoard[rowIndex][colIndex] != 0:
+                print (" %i " %(SBoard[rowIndex][colIndex]), end="")
+            else:
+                print ("   ", end="")
+        print (verticalEdge)
+    print (horizontalEdge)
+
     
 
  
@@ -56,7 +64,7 @@ def printBoard (SBoard):
 #     # nested for loop, outer loop runs three times (for each row) and the inner loop runs 9 times (for each column)
 #     #for loop required for implementing 
 #     startingRow = row // 3 * 3
-#     stratingCol = col // 3 * 3
+#     startingCol = col // 3 * 3
 
 
 
