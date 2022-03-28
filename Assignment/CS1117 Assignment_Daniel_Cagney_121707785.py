@@ -68,14 +68,13 @@ rTotals, cTotals = calculate_score([
 ["!!!", "!!!", "!!", "O", "!", "!", "!!!", "!!!", "!!", "!!", "X", "!", "#", "#"],
 ["O", "O", "#", "O", "#", "!", "!!!", "X", "X", "O", "!", "!!!", "X", "O"]])
 
-#print (rTotals, cTotals)
+print (rTotals, cTotals)
 
 
 ################################## Question 2 ############################################
 
- 
-# Function to compute partition
-def identifyPivot(L):
+
+def identifyPivot(L): #this function takes one argument, i.e.list input
     """The pivot point of a list is a number where all the numbers to the left of it and all the numbers to the right of it sum to the same value.
     - initialise rightside sum to 0, outside of any loops as we will adjust the total Sum with each iteration.
     - initialise leftside sum to 0, outside of any loops as we will adjust the total Sum with each iteration.
@@ -116,7 +115,7 @@ def identifyPivot(L):
         if leftSidePivotSum == rightSidePivotSum:
 
             return L[checkPivotIndex] #if the right side of the sum and left side of the sum are equal, 
-            #we can return the value / number at the list[index] that we are checking i.e. list_index[index being checked as the pivot].
+            #we can return the value / number at the list[index] that we are checking i.e. list_index[index being checked as the pivot point].
 
         #otherwise, we now need to increase the index of the list, and of the index being checked which we are checking on each iteration of the while loop.
         checkPivotIndex += 1 #increment the checkPivotIndex, if the left side sum does not equal right side sum.
