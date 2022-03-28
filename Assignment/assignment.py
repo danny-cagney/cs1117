@@ -82,6 +82,7 @@ def identifyPivot(L):
     - if the leftside sum == rightside sum, then return the number form the list at the index
     - if there is no pivot index to return then the function returns -1
     - where the left side of the sum equals the right side of the sum, we can find the index at which lies between these two equal sums. 
+    - This function returns the value at the index which is the pivot point, else it returns (-1)
     """
 
     # we will need to initialise two variables that will contain the total sum values for the left side sum total and the right sum total. 
