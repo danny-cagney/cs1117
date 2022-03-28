@@ -86,7 +86,9 @@ def identifyPivot(L): #this function takes one argument, i.e.list input
 
     # we will need to initialise two variables that will contain the total sum values for the left side sum total and the right sum total. 
     rightSidePivotSum = 0 #we need to initialise a variable that will store the value of the sum of all numbers to the right of the pivot index being checked. That is, we calculate sum on right side of the pivot point.
-    leftSidePivotSum = 0 #we need to initialise a variable that will be used to calculate and store the total sum on left side of the pivot point, as we iterate through he list indices.
+    
+    #we need to initialise a variable that will be used to calculate and store the total sum on left side of the pivot point, as we iterate through he list indices.
+    leftSidePivotSum = 0 
 
  
     # I use a for loop to iterate over the list, using the range command, so as to start the iteration at index[1], to run through to the length of the list. 
@@ -99,26 +101,26 @@ def identifyPivot(L): #this function takes one argument, i.e.list input
     # This will be used to add to the sum totals later. 
     # We initialise to 0, because we have made an assumption to start on the left side of the list. As the left most index cannot be a pivot then index[1] must be the first possible pivot.
     # and work through the list at the start working from left to right. This will be used to access the values in the list, add to the sum totals later. 
-    checkPivotIndex = 1 #initialise a pivot index (first pivot point to check) check index of list. This will be used to access the values in the list, add to the sum totals later. This is the first possible index at which the pivot point maybe. 
+    checkIfPivotIndex = 1 #initialise a pivot index (first pivot point to check) check index of list. This will be used to access the values in the list, add to the sum totals later. This is the first possible index at which the pivot point maybe. 
  
     # summing sides and checking the pivot point
     # i.e. checking that the left side of the pivot point sum is equal to the right side of the pivot point sum.
     
-    while checkPivotIndex < len(L): # we use a while loop here as we DO NOT know how many iterations of the list will be required to find the pivot point.
+    while checkIfPivotIndex < len(L): # we use a while loop here as we DO NOT know how many iterations of the list will be required to find the pivot point.
         # the condition we apply on the while loop is to iterate while the index number being checked is less than the length of the list, so as the loop does not continue in defintely. 
         
-        rightSidePivotSum -= L[checkPivotIndex] #decrement - we need to remove the number at the index being checked, from the total sum value of the right hand side of the sum, as it is not included.
+        rightSidePivotSum -= L[checkIfPivotIndex] #decrement - we need to remove the number at the index being checked, from the total sum value of the right hand side of the sum, as it is not included.
         leftSidePivotSum += L[initialIndex] #increment - we now need to increase the sum value stored in this variable to take account that the next index in the list is being checked, 
 
         # in order to return the number at the "pivot" index, we need to check that the,
         # sum on the left of the pivot is equal to the sum of the numbers on the right side.
         if leftSidePivotSum == rightSidePivotSum:
 
-            return L[checkPivotIndex] #if the right side of the sum and left side of the sum are equal, 
+            return L[checkIfPivotIndex] #if the right side of the sum and left side of the sum are equal, 
             #we can return the value / number at the list[index] that we are checking i.e. list_index[index being checked as the pivot point].
 
         #otherwise, we now need to increase the index of the list, and of the index being checked which we are checking on each iteration of the while loop.
-        checkPivotIndex += 1 #increment the checkPivotIndex, if the left side sum does not equal right side sum.
+        checkIfPivotIndex += 1 #increment the checkPivotIndex, if the left side sum does not equal right side sum.
         initialIndex += 1 #increment the initial index, so that during the next iteration we can add the next number value at that index, to the right at the index, to the left side total of the sum. 
 
     else:
