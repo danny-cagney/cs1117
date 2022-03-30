@@ -83,7 +83,7 @@ def identifyPivot(L): #this function takes one argument, i.e.list input
     - where the left side of the sum equals the right side of the sum, we can find the index at which lies between these two equal sums. 
     - This function returns the value at the index which is the pivot point, else it returns (-1)
     """
-
+    pivot = -1
     # we will need to initialise two variables that will contain the total sum values for the left side sum total and the right sum total. 
     rightSidePivotSum = 0 #we need to initialise a variable that will store the value of the sum of all numbers to the right of the pivot index being checked. That is, we calculate sum on right side of the pivot point.
     
@@ -115,7 +115,7 @@ def identifyPivot(L): #this function takes one argument, i.e.list input
         # in order to return the number at the "pivot" index, we need to check that the,
         # sum on the left of the pivot is equal to the sum of the numbers on the right side.
         if leftSidePivotSum == rightSidePivotSum:
-
+            
             return L[checkIfPivotIndex] #if the right side of the sum and left side of the sum are equal, 
             #we can return the value / number at the list[index] that we are checking i.e. list_index[index being checked as the pivot point].
 
@@ -124,7 +124,7 @@ def identifyPivot(L): #this function takes one argument, i.e.list input
         initialIndex += 1 #increment the initial index, so that during the next iteration we can add the next number value at that index, to the right at the index, to the left side total of the sum. 
 
     else:
-        return -1 #if there is no pivot index identified, then we should return -1 as per the question outline.
+        return pivot #if there is no pivot index identified, then we should return -1 as per the question outline.
  
 print(identifyPivot([9,1,9])) #returns 1
 print(identifyPivot ([8,8,8,8])) #returns -1
@@ -132,5 +132,6 @@ print(identifyPivot ([1,2,4,9,10,-10,-9,3])) #returns 4
 print(identifyPivot ([7,-1,0,-1,1,1,2,3])) #returns 0
 print(identifyPivot ([1,2,3,4,5,10,20,-5])) #returns 10
 print(identifyPivot ([20, 20, 20, 20, 20, 1, 100])) #returns 1
+print(identifyPivot ([100, 1, 20, 20, 20, 20, 20])) #returns 1
 
  
